@@ -15,6 +15,7 @@
 #include "os_crypto/md5/md5_op.h"
 #include "external/cJSON/cJSON.h"
 #include <stdlib.h>
+#include <time.h>
 
 /* Global variables */
 int restart_necessary;
@@ -348,7 +349,7 @@ int add_agent(int json_output)
                      (int)time3);
             OS_MD5_Str(str1, md1);
 
-            fprintf(fp, "%s %s %s %s%s\n", id, name, c_ip.ip, md1, md2);
+            fprintf(fp, "%s %s %s %s%s %lld\n", id, name, c_ip.ip, md1, md2, (long long int)time3);
             fclose(fp);
 
             if (json_output) {

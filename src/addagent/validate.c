@@ -83,9 +83,9 @@ char *OS_AddNewAgent(const char *name, const char *ip, const char *id)
 
     os_calloc(2048, sizeof(char), finals);
     if (ip == NULL) {
-        snprintf(finals, 2048, "%s %s any %s%s", id, name, md1, md2);
+        snprintf(finals, 2048, "%s %s any %s%s %lld", id, name, md1, md2, (long long int)time(NULL));
     } else {
-        snprintf(finals, 2048, "%s %s %s %s%s", id, name, ip, md1, md2);
+        snprintf(finals, 2048, "%s %s %s %s%s %lld", id, name, ip, md1, md2, (long long int)time(NULL));
     }
     fprintf(fp, "%s\n", finals);
 

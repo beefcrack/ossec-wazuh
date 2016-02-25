@@ -222,7 +222,7 @@ void OS_ReadKeys(keystore *keys)
 
         /* Get key */
         valid_str = tmp_str;
-        tmp_str = strchr(tmp_str, '\n');
+        tmp_str = strchr(tmp_str, ' ');
         if (tmp_str) {
             *tmp_str = '\0';
         }
