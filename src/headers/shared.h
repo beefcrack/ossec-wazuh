@@ -94,6 +94,8 @@
 
 /* Global portability code */
 
+typedef uint32_t netsize_t;
+
 #ifdef SOLARIS
 #include <limits.h>
 typedef uint32_t u_int32_t;
